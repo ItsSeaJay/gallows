@@ -7,10 +7,13 @@ int main(int argc, char** argv[])
 
 	game.start();
 
-	while (game.isPlaying())
+	while (!game.hasStopped())
 	{
 		game.update();
+		game.draw();
 	}
+
+	game.stop();
 
 	return 0;
 }

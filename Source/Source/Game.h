@@ -11,6 +11,7 @@ public:
 
 	void start();
 	void update();
+	void draw();
 	void stop();
 
 	bool isStopped();

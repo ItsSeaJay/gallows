@@ -20,12 +20,16 @@ void Game::update()
 
 }
 
+void Game::draw()
+{
+}
+
 void Game::stop()
 {
 	
 }
 
-bool Game::isStopped()
+bool Game::hasStopped()
 {
 	return this->stopped;
 }
