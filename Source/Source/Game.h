@@ -14,7 +14,8 @@ public:
 	void draw();
 	void stop();
 
-	bool isStopped();
+	bool hasStopped();
+
 private:
 	std::string title = "Gallows";
 	bool stopped = false;

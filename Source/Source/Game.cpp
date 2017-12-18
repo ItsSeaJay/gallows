@@ -22,6 +22,7 @@ void Game::update()
 
 void Game::draw()
 {
+
 }
 
 void Game::stop()
