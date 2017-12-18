@@ -12,13 +12,19 @@ Scribe::~Scribe()
 
 void Scribe::read()
 {
-	std::ifstream book;
+	std::ifstream book(path);
 
-	book.open(path);
-
-	if (!book.fail())
+	if (book.is_open())
 	{
-		std::cout << "Mischief managed";
+		std::string line;
+
+		while (getline(book, line))
+		{
+			if (line != "")
+			{
+				dictionary.push_back(line);
+			}
+		}
 	}
 	else
 	{
