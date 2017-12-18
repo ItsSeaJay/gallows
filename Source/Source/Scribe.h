@@ -13,6 +13,7 @@ public:
 
 	void read();
 
+	std::string getRandomWord();
 	std::string getPath();
 	void setPath(std::string path);
 

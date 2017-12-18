@@ -34,6 +34,11 @@ void Scribe::read()
 	}
 }
 
+std::string Scribe::getRandomWord()
+{
+	return dictionary.at(rand() % dictionary.size());
+}
+
 std::string Scribe::getPath()
 {
 	return this->path;
