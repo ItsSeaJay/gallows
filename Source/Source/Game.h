@@ -6,6 +6,7 @@
 #include <string>
 #include <conio.h>
 #include "Scribe.h"
+#include "Validator.h"
 
 class Game
 {
@@ -28,15 +29,17 @@ private:
 	bool stopped = false;
 
 	Scribe scribe;
+	Validator validator;
 
 	enum State
 	{
 		playing,
+		won,
 		over
 	};
 
 	State state = playing;
 
 	void handleState(State state);
-	bool validateLetter(const char& letter);
+	bool validateGuess(const char& letter) const;
 };

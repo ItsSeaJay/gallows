@@ -67,16 +67,13 @@ void Game::handleState(State state)
 	}
 }
 
-bool Game::validateLetter(const char& letter)
+bool Game::validateGuess(const char& guess) const
 {
-	if (isalpha(letter))
+	if (!validator.vectorContainsChar(guess, guesses))
 	{
-		for (size_t i = 0; i < word.size(); ++i)
+		if (isalpha(guess))
 		{
-			if (word.at(i) == letter)
-			{
-				return true;
-			}
+			guesses.push_back(guess);
 		}
 	}
 
