@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Scribe.h"
 
 class Game
 {
@@ -19,4 +20,6 @@ public:
 private:
 	std::string title = "Gallows";
 	bool stopped = false;
+
+	Scribe scribe;
 };
