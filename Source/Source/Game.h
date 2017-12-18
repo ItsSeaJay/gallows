@@ -22,7 +22,16 @@ public:
 private:
 	std::string title = "Gallows";
 	std::string word;
+	std::string guess;
 	bool stopped = false;
 
 	Scribe scribe;
+
+	enum State
+	{
+		playing,
+		over
+	};
+
+	State state = playing;
 };

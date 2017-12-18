@@ -15,18 +15,16 @@ void Game::start()
 	srand(time(0));
 
 	scribe.read();
-	word = scribe.getRandomWord();
-	std::cout << word;
 }
 
 void Game::update()
 {
-
+	word = scribe.getRandomWord();
 }
 
 void Game::draw()
 {
-
+	std::cout << word;
 }
 
 void Game::stop()
@@ -37,7 +35,7 @@ void Game::stop()
 	}
 }
 
-bool Game::hasStopped()
+bool Game::hasStopped() const
 {
 	return this->stopped;
 }
