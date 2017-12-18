@@ -13,16 +13,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+Source/Source/[Dd]ebug/
+Source/Source/[Dd]ebugPublic/
+Source/Source/[Rr]elease/
+Source/Source/[Rr]eleases/
+Source/Source/x64/
+Source/Source/x86/
+Source/Source/bld/
+Source/Source/[Bb]in/
+Source/Source/[Oo]bj/
+Source/Source/[Ll]og/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -38,8 +38,8 @@ bld/
 TestResult.xml
 
 # Build Results of an ATL Project
-[Dd]ebugPS/
-[Rr]eleasePS/
+Source/Source/[Dd]ebugPS/
+Source/Source/[Rr]eleasePS/
 dlldata.c
 
 # .NET Core
@@ -130,20 +130,20 @@ AutoTest.Net/
 .sass-cache/
 
 # Installshield output folder
-[Ee]xpress/
+Source/Source/[Ee]xpress/
 
 # DocProject is a documentation generator add-in
-DocProject/buildhelp/
-DocProject/Help/*.HxT
-DocProject/Help/*.HxC
-DocProject/Help/*.hhc
-DocProject/Help/*.hhk
-DocProject/Help/*.hhp
-DocProject/Help/Html2
-DocProject/Help/html
+Source/Source/DocProject/buildhelp/
+Source/Source/DocProject/Help/*.HxT
+Source/Source/DocProject/Help/*.HxC
+Source/Source/DocProject/Help/*.hhc
+Source/Source/DocProject/Help/*.hhk
+Source/Source/DocProject/Help/*.hhp
+Source/Source/DocProject/Help/Html2
+Source/Source/DocProject/Help/html
 
 # Click-Once directory
-publish/
+Source/Source/publish/
 
 # Publish Web Output
 *.[Pp]ublish.xml
@@ -175,12 +175,12 @@ csx/
 *.build.csdef
 
 # Microsoft Azure Emulator
-ecf/
-rcf/
+Source/Source/ecf/
+Source/Source/rcf/
 
 # Windows Store app package directories and files
-AppPackages/
-BundleArtifacts/
+Source/Source/AppPackages/
+Source/Source/BundleArtifacts/
 Package.StoreAssociation.xml
 _pkginfo.txt
 
