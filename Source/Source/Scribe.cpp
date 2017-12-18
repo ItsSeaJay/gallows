@@ -25,6 +25,8 @@ void Scribe::read()
 				dictionary.push_back(line);
 			}
 		}
+
+		book.close();
 	}
 	else
 	{

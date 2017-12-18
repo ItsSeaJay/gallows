@@ -129,6 +129,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Scribe.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\dictionary.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
