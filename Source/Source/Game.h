@@ -4,6 +4,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "Scribe.h"
 
 class Game
@@ -17,12 +18,13 @@ public:
 	void draw();
 	void stop();
 
-	bool hasStopped();
+	bool hasStopped() const;
 
 private:
 	std::string title = "Gallows";
 	std::string word;
 	std::string guess;
+	std::vector<char> guesses;
 	bool stopped = false;
 
 	Scribe scribe;
@@ -34,4 +36,7 @@ private:
 	};
 
 	State state = playing;
+
+	void handleState(State state);
+	bool validateLetter(const char& letter);
 };

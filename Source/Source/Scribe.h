@@ -15,6 +15,7 @@ public:
 
 	std::string getRandomWord();
 	std::string getPath();
+	std::vector<std::string> getDictionary();
 	void setPath(std::string path);
 
 private:

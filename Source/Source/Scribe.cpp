@@ -44,6 +44,11 @@ std::string Scribe::getPath()
 	return this->path;
 }
 
+std::vector<std::string> Scribe::getDictionary()
+{
+	return dictionary;
+}
+
 void Scribe::setPath(std::string path)
 {
 	this->path = path;

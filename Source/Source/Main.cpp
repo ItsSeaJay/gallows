@@ -9,8 +9,8 @@ int main(int argc, char** argv[])
 
 	while (!game.hasStopped())
 	{
-		game.update();
 		game.draw();
+		game.update();
 	}
 
 	game.stop();
