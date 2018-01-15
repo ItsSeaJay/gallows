@@ -60,7 +60,8 @@ void Game::handleState(State state)
 		}
 
 		std::cout << '\n';
-		std::cout << "Choose wisely: ";
+		std::cout << "You have " << player.getLives() << " lives remaining.";
+		std::cout << '\n' << "Choose wisely: ";
 
 		// Capture input
 		letter = _getch();
@@ -69,14 +70,27 @@ void Game::handleState(State state)
 
 		if (validateGuess(letter))
 		{
+			if (word.find(letter) != std::string::npos)
+			{
+				this->guess.push_back(letter);
+			}
+			else
+			{
+				player.setLives(player.getLives() - 1);
+			}
 			this->guesses.push_back(letter);
-			this->guess.push_back(letter);
 		}
 
 		// Victory condition
 		if (this->guess == this->word)
 		{
 			this->state = Won;
+		}
+
+		// Defeat condition
+		if (player.getLives() <= 0)
+		{
+			this->state = Over;
 		}
 		break;
 	case Game::Won:
@@ -92,7 +106,6 @@ void Game::handleState(State state)
 		this->stopped = true;
 		break;
 	case Game::Over:
-		// TODO: Allow the player to restart the game
 		std::cout << '\n';
 		std::cout << "Better luck next time!" << '\n';
 
