@@ -28,7 +28,8 @@ private:
 	std::string guess;
 	std::vector<char> guesses;
 	bool stopped = false;
-	bool randomise = false;
+	bool randomise = true;
+	int round = 1;
 
 	Player player;
 	Scribe scribe;

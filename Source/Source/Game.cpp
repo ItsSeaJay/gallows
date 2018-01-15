@@ -23,6 +23,19 @@ void Game::start()
 
 	scribe.read();
 	word = scribe.getRandomWord();
+
+	// Ensure that the current guess and the word are the same length
+	for (size_t letter = 0; letter < word.size(); letter++)
+	{
+		this->guess.push_back('*');
+	}
+
+	// Output welcome message
+	std::cout << '\'' << this->title;
+	std::cout << "\' by Callum John @ItsSeaJay 2018" << '\n';
+	std::cout << "Released under the MIT Open Source License." << "\n";
+	std::cout << "See https://opensource.org/licenses/MIT for more information.";
+	std::cout << '\n';
 }
 
 void Game::update()
@@ -51,7 +64,8 @@ void Game::handleState(State state)
 	case Game::Playing:
 		char letter;
 		std::cout << '\n';
-		std::cout << word << '\n';
+		std::cout << "Round: " << this->round << '\n';
+		std::cout << '\n';
 		std::cout << guess << '\n';
 
 		for (size_t letter = 0; letter < guesses.size(); ++letter)
@@ -70,9 +84,18 @@ void Game::handleState(State state)
 
 		if (validateGuess(letter))
 		{
+			// If the guessed letter is part of the word
 			if (word.find(letter) != std::string::npos)
 			{
-				this->guess.push_back(letter);
+				// Add all occurences to the guess
+				// TODO: Move this into a function
+				for (size_t position = 0; position < word.size(); ++position)
+				{
+					if (letter == word.at(position))
+					{
+						guess.at(position) = letter;
+					}
+				}
 			}
 			else
 			{
@@ -92,24 +115,22 @@ void Game::handleState(State state)
 		{
 			this->state = Over;
 		}
+
+		// Update round
+		++this->round;
 		break;
 	case Game::Won:
 		// TODO: Allow the player to restart the game
 		std::cout << '\n';
-		std::cout << "Conglaturations!" << '\n';
-		std::cout << "You have completed a great game." << '\n';
-		std::cout << "And prooved the justice of our culture." << '\n';
-		std::cout << "Now go and rest our heroes!" << '\n';
-
-		_getch();
+		std::cout << "You escape the gallows." << '\n';
+		std::cout << "For now..." << '\n';
 
 		this->stopped = true;
 		break;
 	case Game::Over:
 		std::cout << '\n';
+		std::cout << "The word on the executioner's lips was: " << word;
 		std::cout << "Better luck next time!" << '\n';
-
-		_getch();
 
 		this->stopped = true;
 		break;
