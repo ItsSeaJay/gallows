@@ -12,7 +12,14 @@ Game::~Game()
 
 void Game::start()
 {
-	srand(time(0));
+	if (randomise)
+	{
+		srand(time(0));
+	}
+	else
+	{
+		srand(0);
+	}
 
 	scribe.read();
 	word = scribe.getRandomWord();
@@ -23,13 +30,6 @@ void Game::update()
 	handleState(this->state);
 }
 
-void Game::draw()
-{
-	std::cout << word << '\n';
-	std::cout << guess << '\n';
-	std::cout << "Choose wisely: ";
-	std::cout << '\n';
-}
 
 void Game::stop()
 {
@@ -48,17 +48,36 @@ void Game::handleState(State state)
 {
 	switch (state)
 	{
-	case Game::playing:
+	case Game::Playing:
 		char letter;
+		std::cout << '\n';
+		std::cout << word << '\n';
+		std::cout << guess << '\n';
+
+		for (size_t letter = 0; letter < guesses.size(); ++letter)
+		{
+			std::cout << guesses.at(letter);
+		}
+
+		std::cout << '\n';
+		std::cout << "Choose wisely: ";
 
 		letter = toupper(_getch());
 
-		if (validateLetter(letter))
+		if (validateGuess(letter))
 		{
 			guesses.push_back(letter);
 		}
+
+		if (this->guess == this->word)
+		{
+			this->state = Won;
+		}
 		break;
-	case Game::over:
+	case Game::Won:
+		std::cout << "Conglaturations! ";
+		break;
+	case Game::Over:
 		std::cout << "See you again sometime!" << '\n';
 		break;
 	default:
@@ -69,11 +88,11 @@ void Game::handleState(State state)
 
 bool Game::validateGuess(const char& guess) const
 {
-	if (!validator.vectorContainsChar(guess, guesses))
+	if (!validator.search(guess, guesses))
 	{
 		if (isalpha(guess))
 		{
-			guesses.push_back(guess);
+			return true;
 		}
 	}
 

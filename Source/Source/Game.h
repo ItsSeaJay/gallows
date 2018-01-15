@@ -16,7 +16,6 @@ public:
 
 	void start();
 	void update();
-	void draw();
 	void stop();
 
 	bool hasStopped() const;
@@ -33,12 +32,12 @@ private:
 
 	enum State
 	{
-		playing,
-		won,
-		over
+		Playing,
+		Won,
+		Over
 	};
 
-	State state = playing;
+	State state = Playing;
 
 	void handleState(State state);
 	bool validateGuess(const char& letter) const;

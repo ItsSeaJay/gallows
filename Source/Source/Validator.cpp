@@ -2,15 +2,15 @@
 
 Validator::Validator()
 {
-
+	// TODO: Finish constructor
 }
 
 Validator::~Validator()
 {
-
+	// TODO: Finish destructor
 }
 
-bool Validator::vectorContainsChar(const char & term, const std::vector<char>& search) const
+bool Validator::search(const char & term, const std::vector<char>& search) const
 {
 	for (int currentChar = 0; currentChar < search.size(); ++currentChar)
 	{

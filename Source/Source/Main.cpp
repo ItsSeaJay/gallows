@@ -9,7 +9,6 @@ int main(int argc, char** argv[])
 
 	while (!game.hasStopped())
 	{
-		game.draw();
 		game.update();
 	}
 

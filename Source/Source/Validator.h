@@ -9,5 +9,5 @@ public:
 	Validator();
 	~Validator();
 
-	bool vectorContainsChar(const char& term, const std::vector<char>& search) const;
+	bool search(const char& term, const std::vector<char>& search) const;
 };
