@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <conio.h>
+
+#include "Player.h"
 #include "Scribe.h"
 #include "Validator.h"
 
@@ -28,6 +30,7 @@ private:
 	bool stopped = false;
 	bool randomise = false;
 
+	Player player;
 	Scribe scribe;
 	Validator validator;
 
