@@ -62,7 +62,10 @@ void Game::handleState(State state)
 		std::cout << '\n';
 		std::cout << "Choose wisely: ";
 
-		letter = tolower(_getch());
+		// Capture input
+		letter = _getch();
+
+		std::cout << letter;
 
 		if (validateGuess(letter))
 		{
@@ -70,6 +73,7 @@ void Game::handleState(State state)
 			this->guess.push_back(letter);
 		}
 
+		// Victory condition
 		if (this->guess == this->word)
 		{
 			this->state = Won;
@@ -88,7 +92,13 @@ void Game::handleState(State state)
 		this->stopped = true;
 		break;
 	case Game::Over:
-		std::cout << "See you again sometime!" << '\n';
+		// TODO: Allow the player to restart the game
+		std::cout << '\n';
+		std::cout << "Better luck next time!" << '\n';
+
+		_getch();
+
+		this->stopped = true;
 		break;
 	default:
 		std::cerr << "Error: invalid game state" << '\n';
@@ -98,12 +108,20 @@ void Game::handleState(State state)
 
 bool Game::validateGuess(const char& guess) const
 {
-	if (!validator.search(guess, guesses))
+	if (isalpha(guess))
 	{
-		if (isalpha(guess))
+		if (!validator.search(guess, guesses))
 		{
 			return true;
 		}
+		else
+		{
+			std::cout << "\n" << "You already guessed that letter.";
+		}
+	}
+	else
+	{
+		std::cout << "\n" << "Guess letters only.";
 	}
 
 	return false;
