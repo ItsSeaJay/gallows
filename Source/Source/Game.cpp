@@ -62,11 +62,12 @@ void Game::handleState(State state)
 		std::cout << '\n';
 		std::cout << "Choose wisely: ";
 
-		letter = toupper(_getch());
+		letter = tolower(_getch());
 
 		if (validateGuess(letter))
 		{
-			guesses.push_back(letter);
+			this->guesses.push_back(letter);
+			this->guess.push_back(letter);
 		}
 
 		if (this->guess == this->word)
@@ -75,7 +76,16 @@ void Game::handleState(State state)
 		}
 		break;
 	case Game::Won:
-		std::cout << "Conglaturations! ";
+		// TODO: Allow the player to restart the game
+		std::cout << '\n';
+		std::cout << "Conglaturations!" << '\n';
+		std::cout << "You have completed a great game." << '\n';
+		std::cout << "And prooved the justice of our culture." << '\n';
+		std::cout << "Now go and rest our heroes!" << '\n';
+
+		_getch();
+
+		this->stopped = true;
 		break;
 	case Game::Over:
 		std::cout << "See you again sometime!" << '\n';

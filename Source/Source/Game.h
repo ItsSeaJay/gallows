@@ -26,6 +26,7 @@ private:
 	std::string guess;
 	std::vector<char> guesses;
 	bool stopped = false;
+	bool randomise = false;
 
 	Scribe scribe;
 	Validator validator;
