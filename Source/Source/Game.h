@@ -20,7 +20,7 @@ public:
 	void update();
 	void stop();
 
-	bool hasStopped() const;
+	bool getStopped() const;
 
 private:
 	std::string title = "Gallows";

@@ -52,7 +52,7 @@ void Game::stop()
 	}
 }
 
-bool Game::hasStopped() const
+bool Game::getStopped() const
 {
 	return this->stopped;
 }
