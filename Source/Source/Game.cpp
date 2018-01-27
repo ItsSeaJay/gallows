@@ -63,7 +63,8 @@ void Game::handleState(State state)
 	{
 	case Game::Playing:
 		char letter;
-		std::cout << '\n';
+
+		std::cout << '\n' << '\n';
 		std::cout << "Round: " << this->round << '\n';
 		std::cout << '\n';
 		std::cout << guess << '\n';
@@ -73,6 +74,8 @@ void Game::handleState(State state)
 			std::cout << guesses.at(letter);
 		}
 
+		std::cout << '\n';
+		std::cout << player.status();
 		std::cout << '\n';
 		std::cout << "You have " << player.getLives() << " lives remaining.";
 		std::cout << '\n' << "Choose wisely: ";

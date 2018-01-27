@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data\dictionary.txt" />
+    <Text Include="status.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

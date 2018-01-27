@@ -1,17 +1,16 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 
 class Player
 {
 public:
-	Player();
-	~Player();
-
 	int getLives();
-	void setLives(int lives);
+	void setLives(const int& lives);
+	std::string status() const;
 private:
-	int lives = 9;
-	std::string name = "John";
+	const int MAX_LIVES = 9;
+	int lives = MAX_LIVES;
 };
 

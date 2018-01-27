@@ -49,5 +49,8 @@
     <Text Include="Data\dictionary.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="status.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
