@@ -1,15 +1,5 @@
 #include "Game.h"
 
-Game::Game()
-{
-	// TODO: Finish constructor
-}
-
-Game::~Game()
-{
-	// TODO: Finish destructor
-}
-
 void Game::start()
 {
 	if (randomise)
@@ -153,13 +143,15 @@ bool Game::validateGuess(const char& guess) const
 		}
 		else
 		{
-			std::cout << "\n" << "You already guessed that letter.";
+			std::cout << '\n' << "You already guessed that letter.";
 		}
 	}
 	else
 	{
-		std::cout << "\n" << "Guess letters only.";
+		std::cout << '\n' << "Guess letters only.";
 	}
+
+	std::cout << '\n';
 
 	return false;
 }

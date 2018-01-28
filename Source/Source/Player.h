@@ -8,9 +8,9 @@ class Player
 public:
 	int getLives();
 	void setLives(const int& lives);
-	std::string status() const;
+	std::string status();
 private:
-	const int MAX_LIVES = 9;
+	const int MAX_LIVES = 7;
 	int lives = MAX_LIVES;
 };
 
