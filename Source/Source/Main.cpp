@@ -1,13 +1,13 @@
 #include <iostream>
 #include "Game.h"
 
-int main(int argc, char** argv[])
+int main(int argc, char* argv[])
 {
 	Game game;
 
 	game.start();
 
-	while (!game.hasStopped())
+	while (!game.getStopped())
 	{
 		game.update();
 	}

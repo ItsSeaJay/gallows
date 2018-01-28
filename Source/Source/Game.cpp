@@ -1,15 +1,5 @@
 #include "Game.h"
 
-Game::Game()
-{
-	// TODO: Finish constructor
-}
-
-Game::~Game()
-{
-	// TODO: Finish destructor
-}
-
 void Game::start()
 {
 	if (randomise)
@@ -52,7 +42,7 @@ void Game::stop()
 	}
 }
 
-bool Game::hasStopped() const
+bool Game::getStopped() const
 {
 	return this->stopped;
 }
@@ -63,7 +53,8 @@ void Game::handleState(State state)
 	{
 	case Game::Playing:
 		char letter;
-		std::cout << '\n';
+
+		std::cout << '\n' << '\n';
 		std::cout << "Round: " << this->round << '\n';
 		std::cout << '\n';
 		std::cout << guess << '\n';
@@ -73,6 +64,8 @@ void Game::handleState(State state)
 			std::cout << guesses.at(letter);
 		}
 
+		std::cout << '\n';
+		std::cout << player.status();
 		std::cout << '\n';
 		std::cout << "You have " << player.getLives() << " lives remaining.";
 		std::cout << '\n' << "Choose wisely: ";
@@ -150,13 +143,15 @@ bool Game::validateGuess(const char& guess) const
 		}
 		else
 		{
-			std::cout << "\n" << "You already guessed that letter.";
+			std::cout << '\n' << "You already guessed that letter.";
 		}
 	}
 	else
 	{
-		std::cout << "\n" << "Guess letters only.";
+		std::cout << '\n' << "Guess letters only.";
 	}
+
+	std::cout << '\n';
 
 	return false;
 }
