@@ -1,6 +1,8 @@
 # Gallows
 An implementation of the pen-and-paper game 'Hangman' in C++
 
+![Alt text](/gallows-screenshot.png)
+
 # Notice
 Gallows was developed using the Microsoft Visual Studio: Community Edition (2017) IDE, for the associated compiler. You may have to do some leg work when it comes to compiling the game with other tools, such as The GNU Compiler Collection.
 
